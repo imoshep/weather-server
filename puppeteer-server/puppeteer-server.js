@@ -2,7 +2,7 @@ const express = require('express');
 const puppeteer = require('puppeteer');
 const cors = require('cors');
 
-const port = process.env.port || 8181;
+const port = process.env.PORT || 8181;
 
 const app = express(); 
 
