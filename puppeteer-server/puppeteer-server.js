@@ -6,7 +6,19 @@ const port = process.env.PORT || 8181;
 
 const app = express(); 
 
-app.use(cors());
+const whitelist = ['https://happy-mestorf-d1fd6e.netlify.app', 'http://localhost:3000']
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+          callback(null, true)
+        } else {
+          callback(new Error('Not allowed by CORS'))
+        }
+      },
+      optionsSuccessStatus: 200
+}
+
+app.use('*', cors(corsOptions));
 app.use(express.json())
 app.get('/google', async (req, res) => {
     const query = req.query.location.trim().replace(' ', '+');
