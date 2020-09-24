@@ -24,7 +24,7 @@ app.get('/google', async (req, res) => {
     const query = req.query.location.trim().replace(' ', '+');
     console.log('received query: ', query);
     const url = `https://www.google.com/search?q=weather+${query}`
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
     const page = await browser.newPage()
     await page.goto(url);
     await page.screenshot({path: './screenshot.jpeg', type: 'jpeg'})
