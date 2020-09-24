@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./puppeteer-server/puppeteer-server.js",
     "npm start": "node ./puppeteer-server/puppeteer-server.js"
   },
   "author": "",
