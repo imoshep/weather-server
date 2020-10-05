@@ -7,7 +7,7 @@ const port = process.env.PORT || 8181;
 const app = express();
 
 const whitelist = [
-  "https://blissful-pike-9432c4.netlify.app/",
+  "https://blissful-pike-9432c4.netlify.app",
   "https://happy-mestorf-d1fd6e.netlify.app",
   "http://localhost:3000",
   "http://localhost:4200",
